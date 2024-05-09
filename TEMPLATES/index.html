@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Price Range Predictor</title>
+</head>
+<body>
+    <h1>Mobile Price Range Predictor</h1>
+    <form action="/predict" method="post">
+        <label for="battery_power">Battery Power:</label>
+        <input type="number" id="battery_power" name="battery_power" required><br><br>
+        <label for="px_height">Pixel Height:</label>
+        <input type="number" id="px_height" name="px_height" required><br><br>
+        <label for="px_width">Pixel Width:</label>
+        <input type="number" id="px_width" name="px_width" required><br><br>
+        <label for="ram">RAM:</label>
+        <input type="number" id="ram" name="ram" required><br><br>
+        <input type="submit" value="Predict">
+    </form>
+    {% if prediction_text %}
+    <h2>{{ prediction_text }}</h2>
+    {% endif %}
+</body>
+</html>
